@@ -73,6 +73,9 @@
             font-weight: bold;
         }
 
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -183,7 +186,7 @@
         <button class="pure-button" id="showFixedMenuBtn">Toggle Fixed Menu</button>
     </p>
 
-    <div id="fixed-menu" class="pure-menu pure-menu-horizontal pure-menu-fixed">
+    <div id="fixed-menu" class="pure-menu pure-menu-horizontal pure-menu-fixed hidden">
         <ul>
             <li class="pure-menu-selected"><a href="#">Flickr</a></li>
             <li><a href="#">Messenger</a></li>
@@ -259,6 +262,9 @@
                 }
             });
         }
+        Y.one('#showFixedMenuBtn').on('click', function (e) {
+            Y.one('#fixed-menu').toggleClass('hidden');
+        });
     });
     </script>
 </body>
